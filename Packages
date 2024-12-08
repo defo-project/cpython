@@ -1,0 +1,445 @@
+Package: idle-python3.13
+Architecture: all
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Priority: optional
+Section: python
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 1898
+Depends: python3.13, python3-tk, python3.13-tk, libjs-mathjax
+Enhances: python3.13
+Filename: ./idle-python3.13_3.13.0.2.g708843cebc-20241208.062927988091770_all.deb
+Size: 441268
+MD5sum: 0c489a79bc6b87c28ceee10873393d9a
+SHA1: f95143ca9eb29f5c9ae6e2ab4923d342f52351ed
+SHA256: c4f2d3eb46970aa7dc4cf5cd1b6f181e960bdf42f03b8905e54e6b65587de56e
+SHA512: ddab2980f35e72e2fa6a7360bce9941747e286345d772cff0c1925b165b0cbbc0e6a18581f03722a66e37cc4848499afdbf745d99541a064aa588f535b3c3f34
+Description: IDE for Python (v3.13) using Tkinter
+ IDLE is an Integrated Development Environment for Python (v3.13).
+ IDLE is written using Tkinter and therefore quite platform-independent.
+
+Package: libpython3.13-dbg
+Architecture: amd64
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Multi-Arch: same
+Priority: optional
+Section: debug
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 114851
+Depends: libpython3.13-stdlib (= 3.13.0.2.g708843cebc-20241208.062927988091770), libbz2-1.0, libc6 (>= 2.38), libdb5.3t64, libexpat1 (>= 2.6.0), libffi8 (>= 3.4), libgdbm6t64 (>= 1.16), liblzma5 (>= 5.1.1alpha+20120614), libncursesw6 (>= 6.1), libreadline8t64 (>= 7.0~beta), libsqlite3-0 (>= 3.36.0), libssl3t64 (>= 3.4.0.alpha1.983.g1fab577297), libtcl8.6 (>= 8.6.0), libtinfo6 (>= 6), libtk8.6 (>= 8.6.0), libuuid1 (>= 2.20.1), zlib1g (>= 1:1.2.0)
+Breaks: libpython3.13-dbg (<< 3.13.0.2.g708843cebc-20241208.062927988091770), python3-gdbm-dbg (<< 3.12.5-2~), python3-tk-dbg (<< 3.12.5-2~)
+Replaces: libpython3.13-dbg, python3-gdbm-dbg (<< 3.12.5-2~), python3-tk-dbg (<< 3.12.5-2~)
+Filename: ./libpython3.13-dbg_3.13.0.2.g708843cebc-20241208.062927988091770_amd64.deb
+Size: 22802376
+MD5sum: 897265d23cc50c8af1d52278bfb3ab48
+SHA1: 1527db8b9cd2978c2cfa5289cefee0bfaead506c
+SHA256: 444c2fe3857bb91d7791d9d27bae8af954d2d94ecc81b4bcf45d9d5a385b1596
+SHA512: 1c3dd1599c0f2f66b2ab7399727ac97e6b8f49cee62b1b792613c24baad3d1562dbd1587c5bc2108124396a0b8c4580b8045cb8aa784cc6db167c9bb67bd28df
+Description: Debug Build of the Python Interpreter (version 3.13)
+ The package holds two things:
+ .
+ - Extensions for a Python interpreter configured with --pydebug.
+ - Debug information for standard python extensions.
+ .
+ See the README.debug for more information.
+
+Package: libpython3.13-dev
+Architecture: amd64
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Multi-Arch: same
+Priority: optional
+Section: libdevel
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 25628
+Depends: libpython3.13-stdlib (= 3.13.0.2.g708843cebc-20241208.062927988091770), libpython3.13 (= 3.13.0.2.g708843cebc-20241208.062927988091770), libexpat1-dev, zlib1g-dev
+Recommends: libc6-dev | libc-dev
+Filename: ./libpython3.13-dev_3.13.0.2.g708843cebc-20241208.062927988091770_amd64.deb
+Size: 5004668
+MD5sum: 5a28beb1f1ca0876dbfe4a8f84730fe4
+SHA1: 6dc7770de89fc6a9e4a585147622746d4826a798
+SHA256: 6666296ac2106239ee86809c79b458d23a5d03d6501aa031e18537a9cfe58336
+SHA512: 508d8dfd7c4104905fafa53d970bdcdffcf79164d7aa282553fe795bf91073ead83c318e76814774fb7be997f50f5ce61a4da53a02445f81e382232b1609cba1
+Description: Header files and a static library for Python (v3.13)
+ Header files, a static library and development tools for building
+ Python (v3.13) modules, extending the Python interpreter or embedding
+ Python (v3.13) in applications.
+ .
+ Maintainers of Python packages should read README.maintainers.
+ .
+ This package contains development files. It is normally not
+ used on it's own, but as a dependency of python3.13-dev.
+
+Package: libpython3.13-minimal
+Architecture: amd64
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Multi-Arch: same
+Priority: optional
+Section: python
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 5429
+Depends: libc6 (>= 2.14), libssl3t64 (>= 3.4.0.alpha1.983.g1fab577297)
+Recommends: libpython3.13-stdlib
+Conflicts: binfmt-support (<< 1.1.2)
+Filename: ./libpython3.13-minimal_3.13.0.2.g708843cebc-20241208.062927988091770_amd64.deb
+Size: 857524
+MD5sum: f9c5d642cca5733e70c097920e3a0cc8
+SHA1: ddac3e655ea24118e704e225a7809ccde801201b
+SHA256: 9f0b5668997fc3301aeff3ab185e0ed384d66f9b4756f3df8daea12ee957671b
+SHA512: 94434a86aee44363a018ec928e24fa0504e48c9c6472224d6bc3f0cd32c258506e09b823c763377e0c38708e121a70b4a301e2f8dea89e34093bd895afd649d7
+Description: Minimal subset of the Python language (version 3.13)
+ This package contains some essential modules. It is normally not
+ used on it's own, but as a dependency of python3.13-minimal.
+
+Package: libpython3.13-stdlib
+Architecture: amd64
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Multi-Arch: same
+Priority: optional
+Section: python
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 9193
+Depends: libpython3.13-minimal (= 3.13.0.2.g708843cebc-20241208.062927988091770), media-types | mime-support, netbase, tzdata, libbz2-1.0, libc6 (>= 2.38), libdb5.3t64, libffi8 (>= 3.4), liblzma5 (>= 5.1.1alpha+20120614), libncursesw6 (>= 6.1), libreadline8t64 (>= 7.0~beta), libsqlite3-0 (>= 3.36.0), libtinfo6 (>= 6), libuuid1 (>= 2.20.1)
+Filename: ./libpython3.13-stdlib_3.13.0.2.g708843cebc-20241208.062927988091770_amd64.deb
+Size: 1993336
+MD5sum: 13729184b63e60816a2555ea740f8321
+SHA1: ec3c605830528ba706572f04c2d50746b60c8803
+SHA256: a83180e16b546c2db26ddd9a8f980811533ab9d524d49283a4b17b6a253fbe85
+SHA512: 4dee4bdca13a1d87b5542be4fc04ef120b563f334a51e01623ac08cb3a1ecc526de9b4a40c5fedf9ddbea4696d9737ae26fda7c245f4e4c672414d196f41aff8
+Description: Interactive high-level object-oriented language (standard library, version 3.13)
+ Python is a high-level, interactive, object-oriented language. Its 3.13 version
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+ .
+ This package contains Python 3.13's standard library. It is normally not
+ used on its own, but as a dependency of python3.13.
+
+Package: libpython3.13-testsuite
+Architecture: all
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Priority: optional
+Section: libdevel
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 28517
+Depends: python3.13 (>= 3.13.0.2.g708843cebc-20241208.062927988091770), net-tools
+Suggests: python3-gdbm, python3-tk
+Filename: ./libpython3.13-testsuite_3.13.0.2.g708843cebc-20241208.062927988091770_all.deb
+Size: 4607860
+MD5sum: c13af3bf56d6f41526c10cfeab0140d3
+SHA1: c60890e046f984fd124bc200d1afb5f422b127b5
+SHA256: fde995b1f6218c63e0fccc9fc971deacd2df246ecc1e0a8a4746028bc88f71f1
+SHA512: 67719526f50c2c85a67f5cffe5c2571d8a9950daf963767f23ac22ac7d69a21c2cc20bb796432ac2e68d40a0b503d546877eb3e0d4efc9ca0647a89e2c664c76
+Description: Testsuite for the Python standard library (v3.13)
+ The complete testsuite for the Python standard library.  Note that
+ a subset is found in the libpython3.13-stdlib package, which should
+ be enough for other packages to use (please do not build-depend
+ on this package, but file a bug report to include additional
+ testsuite files in the libpython3.13-stdlib package).
+
+Package: libpython3.13
+Architecture: amd64
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Multi-Arch: same
+Priority: optional
+Section: libs
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 7403
+Depends: libpython3.13-stdlib (= 3.13.0.2.g708843cebc-20241208.062927988091770), libc6 (>= 2.38), libexpat1 (>= 2.6.0), zlib1g (>= 1:1.2.0)
+Replaces: libpython3.13
+Filename: ./libpython3.13_3.13.0.2.g708843cebc-20241208.062927988091770_amd64.deb
+Size: 2138252
+MD5sum: 1792f956ebe9e380410e3e622b356a5d
+SHA1: 166ac2b82ebff008a3618faaece5635d334f1b88
+SHA256: ebb0bec5253e8fc7245101e09aaa4c5606520ff782327ab6780021f80d65cd62
+SHA512: e0531817a5fcb82c36f4f25b0e6fa0008cd1e91ee49eea5281d02e2d03ff9f9b3131f38a07256945894e406941ad84bacef4573d354afbea9617d67035532ea1
+Description: Shared Python runtime library (version 3.13)
+ Python is a high-level, interactive, object-oriented language. Its 3.13 version
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+ .
+ This package contains the shared runtime library, normally not needed
+ for programs using the statically linked interpreter.
+
+Package: python3.13-dbg
+Architecture: amd64
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Multi-Arch: allowed
+Priority: optional
+Section: debug
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 83259
+Depends: python3.13 (= 3.13.0.2.g708843cebc-20241208.062927988091770), libpython3.13-dbg (= 3.13.0.2.g708843cebc-20241208.062927988091770), libc6 (>= 2.38), libexpat1 (>= 2.6.0), zlib1g (>= 1:1.2.0)
+Recommends: gdb
+Suggests: python3-gdbm-dbg, python3-tk-dbg
+Filename: ./python3.13-dbg_3.13.0.2.g708843cebc-20241208.062927988091770_amd64.deb
+Size: 51327944
+MD5sum: e42ca4edff52c2c5744d755163cac235
+SHA1: e650db8c320a457a3a75d4662c31a1d302ce89bf
+SHA256: df4d227dafe66797f3c1aefffa7b3cdcd58ed0c90c5aca890c617b1c059db865
+SHA512: b01ece5d2191d41a2638970837913190c32b08e6e128b7f1603aba159233ff90b29646b62f51dd0edb05a357bdb86cc3a3198e02d1955720f9991836cc241585
+Description: Debug Build of the Python Interpreter (version 3.13)
+ The package holds two things:
+ .
+ - A Python interpreter configured with --pydebug. Dynamically loaded modules
+   are searched as <foo>_d.so first. Third party extensions need a separate
+   build to be used by this interpreter.
+ - Debug information for standard python interpreter and extensions.
+ .
+ See the README.debug for more information.
+Build-Ids: 04a7c7fe263d49f55f37a4ea7c5ec41942672386 083c9a899ace925c2cbdb8f450886cd60b6853d2 084dd7374642ccccaa9743d278294fc12626490a 0928a60007e5200b1bf839e77ecda94b3018694e 0caf2d8c024635828fa76c25c43310b6f7c4120f 112d50b9444f7751f4df9bb51b54554a85dc2025 114081c32b51f4c89f160f33c5289bf1cdb544bf 1a241840438f598d4ed8968eb9b3bc74a9013bbe 242ad0d9d9fbbb984e9469ebf19798a4f92c1d77 2c571f73fa2bc77ecd6105622ae8e12cc951580c 45100b3fe096370dd1f1dbb9c6e62a2225095288 49cfd59bd7c8df7a804afafd8533f7705f059dce 50108054d83f0d3ae7670774e9b26755688f94f4 54f3020b31c8fa13e8f26af48f2b7d948698dc00 59b58c5002ffee39f9e9df7f644afe4903d6e2bf 5a7b659531f61f75580983315be4adb60ba6d4c1 5edb843318d1eb71d037be16f4151981f04e0fe1 62b3c5221af72c7c3d6493568cefc35ea208e760 6426a5bf929c5a9ec79b9c480fad2ecff4b05280 67c61be6cb72fef142bc5ad17ddea147619b8d12 6b591e2eca12213a182189c8e008f3a01c0cc0b6 7421e494364f8218c485c0573e2c57a66705c1aa 7a7171cf6e5870cdf3ead2df59e20c7afbeb3c52 7b5345356944a83f8286aa331ce8e04f38053ec5 85246f732662f0433d8601d558ebfd111b8bba8e 883509f4b285f1c0324a21dd214367cbeeb35b53 8b3d42828b669745a3b45a4905ef51dbd725c935 97097b1cd46286c2243c53873dfd1e9db41733f6 987e56608dcac504f3f7c5e494b6c4d7a508e727 99c3cdadc8d2ca81a0c53d7b635eafa7b69b3689 9fa41df9a3f19eb9ed040de2982a177f5ca31212 a6354e50ffb5ba6358729f36d01de468adef0120 a72eaffc730b041eda88e168c3c4f2225fc18f4b a87a4b08c8891ed8abc9f92fde61e20d70eef558 aae65575fccb69130969a34581b8854c3c02926a aebffdff655da3dc5acfb8aee68ea221b2e363ab b41339c16ddb899f8c0e9c627b77a1a3709d4b98 b8e10099efb04c49437a92c8c42a17b7634f2c37 b972e4b760fac818591cc85f7675c4034028fc63 cc7445fb08ed8c0dafc426b4f9f0fead441c440a ce184b02ff30c9ac96acb5eac48ba81d54e12d98 d02f4ee847fd9d1334451c1384b45ac2ddc3ec8b d1d8496338a45d4593f98a0b8c5575238e3801c4 d516dea7c3d5a343aea840aa6b26ed556776ec92 d6175af28b9aad55c1985ca34fb14c6096faf8a2 df4ca95874fb0e1bebd0c5686b07e64049448654 ec911bbb94ae33313e331e89c58298b2761992a2 f5ae1bad7207c580a77454d9e3a0a1f4aad32d86 f7eb75db3ef7ea72e34515099d43d154adabe178 f9f74780821bcda08728ccf74794b0f57a481c57 fa3016a7d3f897ac8dca4ee8b927cbafcb84b916 fd9a984ffc15e362c24dd1abc3bab9a8d4664663
+
+Package: python3.13-dev
+Architecture: amd64
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Multi-Arch: allowed
+Priority: optional
+Section: python
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 507
+Depends: python3.13 (= 3.13.0.2.g708843cebc-20241208.062927988091770), libpython3.13-dev (= 3.13.0.2.g708843cebc-20241208.062927988091770), libpython3.13 (= 3.13.0.2.g708843cebc-20241208.062927988091770)
+Recommends: libc6-dev | libc-dev
+Filename: ./python3.13-dev_3.13.0.2.g708843cebc-20241208.062927988091770_amd64.deb
+Size: 504212
+MD5sum: 184e9d70b73892c8f9e6016680bb192e
+SHA1: 04ad5757543730e18e22a1b0c0b3c7ccae246649
+SHA256: a7181d50f8cc81551a4e6662983dc7e4b7c05f995aeaa1ee2f8b3fca430b4894
+SHA512: 0de5780bd360d11beb168cbb917fc1b03384fca6f160d0180a9006ec610366d9abd54ead84e2518e058760ebc0a8962d2895e94ebb8b334948072a356676f519
+Description: Header files and a static library for Python (v3.13)
+ Header files, a static library and development tools for building
+ Python (v3.13) modules, extending the Python interpreter or embedding
+ Python (v3.13) in applications.
+ .
+ Maintainers of Python packages should read README.maintainers.
+
+Package: python3.13-doc
+Architecture: all
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Multi-Arch: foreign
+Priority: optional
+Section: doc
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 76878
+Depends: libjs-jquery, libjs-underscore
+Suggests: python3.13
+Filename: ./python3.13-doc_3.13.0.2.g708843cebc-20241208.062927988091770_all.deb
+Size: 15562652
+MD5sum: 50b7a3c48c11ad14c455a292131b9edf
+SHA1: fa7e65467316ef03ee5dd50dfc892f251dd83629
+SHA256: 52f2e6c1ad3a1c977dbc0f5f9d1b8dac23113d10d289d3eea8ead04e9b89499f
+SHA512: a79fc0ed5f1c3ed345b5de310ca03525d38cd1a93597feddc092fca0edd36ea8758e5736fc3b7508b02daf0100949ec2e4df2387c14e9ef2a7c9fe6d05c1031e
+Description: Documentation for the high-level object-oriented language Python (v3.13)
+ These is the official set of documentation for the interactive high-level
+ object-oriented language Python (v3.13). All documents are provided
+ in HTML format. The package consists of ten documents:
+ .
+   * What's New in Python3.13
+   * Tutorial
+   * Python Library Reference
+   * Macintosh Module Reference
+   * Python Language Reference
+   * Extending and Embedding Python
+   * Python/C API Reference
+   * Installing Python Modules
+   * Documenting Python
+   * Distributing Python Modules
+
+Package: python3.13-examples
+Architecture: all
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Priority: optional
+Section: python
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 2926
+Depends: python3.13:any (>= 3.13.0.2.g708843cebc-20241208.062927988091770)
+Filename: ./python3.13-examples_3.13.0.2.g708843cebc-20241208.062927988091770_all.deb
+Size: 762332
+MD5sum: 7a63584787620a5fd5cebf7df21d4f8b
+SHA1: f199803ba1a55f8546f823830f722883122cc5ab
+SHA256: e625289c74138ec7ec1ca88b294aa445621da6be9a87e6402372bb18ba7168a4
+SHA512: 6c54940f24b48f0546f1147598c92e9f0c283b09d11a065592bed84e6bc13d39e8baf853bf96404eb7293cc536aabd83910299c1479dcdd243d101980e504ae2
+Description: Examples for the Python language (v3.13)
+ Examples, Demos and Tools for Python (v3.13). These are files included in
+ the upstream Python distribution (v3.13).
+
+Package: python3.13-full
+Architecture: amd64
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Multi-Arch: allowed
+Priority: optional
+Section: python
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 6
+Depends: python3.13 (= 3.13.0.2.g708843cebc-20241208.062927988091770), libpython3.13-testsuite, python3.13-venv (= 3.13.0.2.g708843cebc-20241208.062927988091770), idle-python3.13, python3.13-gdbm, python3.13-tk, ca-certificates
+Recommends: python3.13-doc, python3.13-examples
+Suggests: python3.13-dev
+Filename: ./python3.13-full_3.13.0.2.g708843cebc-20241208.062927988091770_amd64.deb
+Size: 1296
+MD5sum: 416066151d6deb1828aca585286bd3b8
+SHA1: 6594589f7ff4bc3c737b77b8c09fa741f3edc2de
+SHA256: f17658af4496035b3d2715139c59e12b6e7ba10b2893decf62fce8b6ec7e17dd
+SHA512: 7bd88b391b43b2434d7196a096058becf108832897df34b00fafa76e295602d56d8584b2146ae688564e88e2aabc3b1fa2dca7811ad1c28b2e8d7441f57e3737
+Description: Python Interpreter with complete class library (version 3.13)
+ Python, the high-level, interactive object oriented language,
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+ .
+ This package is a dependency package, which depends on the full
+ standard library of Python for Python developers. Including modules
+ used only at build-time, such as venv, and modules with complex
+ dependencies, such as tk and IDLE. All batteries included.
+ .
+ According to the Debian Python policy, this package must not be used in
+ build dependencies, dependencies and recommendations.
+
+Package: python3.13-gdbm
+Architecture: amd64
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Priority: optional
+Section: python
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 98
+Depends: libc6 (>= 2.2.5), libgdbm6t64 (>= 1.16)
+Breaks: python3-gdbm (<< 3.12.5-2~)
+Replaces: python3-gdbm (<< 3.12.5-2~)
+Enhances: python3.13
+Filename: ./python3.13-gdbm_3.13.0.2.g708843cebc-20241208.062927988091770_amd64.deb
+Size: 30328
+MD5sum: 4e74d217d34ff2ee1ebfc3a66953b503
+SHA1: efb39e8688647687d839bdc5a78217d2ba8bb542
+SHA256: d1353552b70254461d15a5f6a828f83355b4e72b4e019d2d8bbda29945b38976
+SHA512: 00fe14d2c51950dc3473736dbd2f3d8aa7c38768dff29d58d6cb014bdbc904ea36835b9f32415ad119f258629df7a5795880df749be9081e3365dee0957a5197
+Description: GNU dbm database support for Python (v3.13)
+ GNU dbm database module for Python. Install this if you want to
+ create or read GNU dbm database files with Python.
+
+Package: python3.13-minimal
+Architecture: amd64
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Multi-Arch: allowed
+Priority: optional
+Section: python
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 6414
+Pre-Depends: libc6 (>= 2.38)
+Depends: libpython3.13-minimal (= 3.13.0.2.g708843cebc-20241208.062927988091770), libexpat1 (>= 2.6.0), zlib1g (>= 1:1.2.0)
+Recommends: python3.13
+Suggests: binfmt-support
+Conflicts: binfmt-support (<< 1.1.2)
+Filename: ./python3.13-minimal_3.13.0.2.g708843cebc-20241208.062927988091770_amd64.deb
+Size: 2038272
+MD5sum: 4512aff88c5f8c1f7de887f419eee37a
+SHA1: d41a9b30aecc0796ff19ae2399c22d1520c5bd40
+SHA256: 046a99937dff00963d1ae6bce475504a85ee658236c61a1e31dc3ceb98985cee
+SHA512: a5521146100e223a768a6fac6b542c57867af862e0f52688c31b964f88da4d93b6cf16f7a82109001bce7ea95c06e4503432e32a5b63dae0a43bbb58c41c0711
+Description: Minimal subset of the Python language (version 3.13)
+ This package contains the interpreter and some essential modules.  It can
+ be used in the boot process for some basic tasks.
+ See /usr/share/doc/python3.13-minimal/README.Debian for a list of the modules
+ contained in this package.
+Cnf-Visible-Pkgname: python3.13
+
+Package: python3.13-nopie
+Architecture: amd64
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Multi-Arch: allowed
+Priority: optional
+Section: python
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 6394
+Depends: python3.13-minimal (= 3.13.0.2.g708843cebc-20241208.062927988091770), libc6 (>= 2.38), libexpat1 (>= 2.6.0), zlib1g (>= 1:1.2.0)
+Filename: ./python3.13-nopie_3.13.0.2.g708843cebc-20241208.062927988091770_amd64.deb
+Size: 2027924
+MD5sum: deb28edb970d285600603fae98e0adc0
+SHA1: 100bf8ce86066cf6374cf2911e96897ebd6beeab
+SHA256: d1230fdf1284cb4b459670b49ee24eb1f9b53dd5b516f914f2ddaa8aff729215
+SHA512: e53dc544da5309174f02455d4cab9b92bc9cfa90b871e2b5e265e2220f85fc8a5cb276923a913fff299524a9d27a8cdb7f0a23ab63c6de079385c38c59179acd
+Description: Python interpreter linked without PIE (version 3.13)
+ This package contains the interpreter not built as position independent
+ executable. This interpreter is diverting the python3.13 executable, and making
+ the interpreter built with PIE available as python3.13-pie.
+Cnf-Visible-Pkgname: python3.13
+
+Package: python3.13-tk
+Architecture: amd64
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Priority: optional
+Section: python
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 443
+Depends: libc6 (>= 2.2.5), libtcl8.6 (>= 8.6.0), libtk8.6 (>= 8.6.0)
+Suggests: tix
+Breaks: python3-tk (<< 3.12.5-2~)
+Replaces: python3-tk (<< 3.12.5-2~)
+Enhances: python3.13
+Filename: ./python3.13-tk_3.13.0.2.g708843cebc-20241208.062927988091770_amd64.deb
+Size: 106748
+MD5sum: a70978fbd3115d62ed06eda3c33d620d
+SHA1: a8597913f22b2bd097f2db450dbaf7978b6ca054
+SHA256: b89b18ebd5e532bbbd3aadf2de27ea9aa92b7cc4842705aa37e49f95e6de9307
+SHA512: 70d96e22cb0dfd9e02b04877e8f23d8a00b6e0fd992aa62ccac1e906ca9648e4ffe530b5c2cefad5607222bc43d79d760432af49086d0be03b81aa1433e18ffd
+Description: Tkinter - Writing Tk applications with Python (v3.13)
+ A module for writing portable GUI applications with Python (v3.13) using Tk.
+ Also known as Tkinter.
+Python-Version: 3.13
+
+Package: python3.13-venv
+Architecture: amd64
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Multi-Arch: allowed
+Priority: optional
+Section: python
+Source: python3.13
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 27
+Depends: python3.13 (= 3.13.0.2.g708843cebc-20241208.062927988091770), python3-pip-whl (>= 22.2), python3-setuptools-whl
+Breaks: python3-pip (<< 1.5.6-4)
+Filename: ./python3.13-venv_3.13.0.2.g708843cebc-20241208.062927988091770_amd64.deb
+Size: 5488
+MD5sum: 1be3d6d767879f6dade114e0d316ae0a
+SHA1: d17922ecd208ea786fb12291e8efa3776bcd2108
+SHA256: 4c0fed191cfc3daf685806cc6ba40bbc46aca39a07bc1e67edbb82421ceaf616
+SHA512: fafb084accba43ea08cb785cbc8fb5fe5869a5fae91e91432638257cbc3e2a2824df64dec84abb029ed8374e1ce2e79138d401bf5c0f74f1d023ae2c88346631
+Description: Interactive high-level object-oriented language (pyvenv binary, version 3.13)
+ Python is a high-level, interactive, object-oriented language. Its 3.13 version
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+ .
+ This package contains the pyvenv-3.13 binary.
+
+Package: python3.13
+Architecture: amd64
+Version: 3.13.0.2.g708843cebc-20241208.062927988091770
+Multi-Arch: allowed
+Priority: optional
+Section: python
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 804
+Depends: python3.13-minimal (= 3.13.0.2.g708843cebc-20241208.062927988091770), libpython3.13-stdlib (= 3.13.0.2.g708843cebc-20241208.062927988091770), media-types | mime-support, tzdata
+Recommends: ca-certificates
+Suggests: python3.13-venv, python3.13-doc, binutils
+Breaks: python3-all (<< 3.6.5~rc1-1), python3-dev (<< 3.6.5~rc1-1), python3-venv (<< 3.6.5-2)
+Filename: ./python3.13_3.13.0.2.g708843cebc-20241208.062927988091770_amd64.deb
+Size: 729912
+MD5sum: a7233e5910aff4d5f570dbd9aa7201f1
+SHA1: 131bffe5d37821a6f6d905ef441d529e7e77ff10
+SHA256: 772febef17c83d8607ddb7cf6e4f35789a436049737bf96a140e76f368f53b0b
+SHA512: 79bc87e935162217607afec480e9acafa371116db41cdefdeed643f9a5934cb2d40accd47e86f09d391831478a0e6be1e41f580bf9bab7aa4bb683f1df26ce16
+Description: Interactive high-level object-oriented language (version 3.13)
+ Python is a high-level, interactive, object-oriented language. Its 3.13 version
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+
