@@ -29,3 +29,4 @@ no-sphinx-8.2.diff
 Add-Debian-specific-documentation-path-to-IDLE-menu.diff
 docutils-0.22
 m68k-gcc-15.patch
+0029-initial-EncryptedClientHello-support-in-ssl-module.patch
