@@ -1,0 +1,135 @@
+Description: Support docutils 0.22
+Origin: https://github.com/python/cpython/pull/139258 and https://github.com/python/cpython/pull/140031
+Bug-Upstream: https://github.com/python/cpython/issues/139257
+--- a/Doc/tools/extensions/pyspecific.py
++++ b/Doc/tools/extensions/pyspecific.py
+@@ -25,11 +25,21 @@
+ SOURCE_URI = 'https://github.com/python/cpython/tree/3.13/%s'
+ 
+ # monkey-patch reST parser to disable alphabetic and roman enumerated lists
++def _disable_alphabetic_and_roman(text):
++    try:
++        # docutils >= 0.22
++        from docutils.parsers.rst.states import InvalidRomanNumeralError
++        raise InvalidRomanNumeralError(text)
++    except ImportError:
++        # docutils < 0.22
++        return None
++
++
+ from docutils.parsers.rst.states import Body
+ Body.enum.converters['loweralpha'] = \
+     Body.enum.converters['upperalpha'] = \
+     Body.enum.converters['lowerroman'] = \
+-    Body.enum.converters['upperroman'] = lambda x: None
++    Body.enum.converters['upperroman'] = _disable_alphabetic_and_roman
+ 
+ 
+ class PyAwaitableMixin(object):
+--- a/Doc/faq/design.rst
++++ b/Doc/faq/design.rst
+@@ -2,9 +2,7 @@
+ Design and History FAQ
+ ======================
+ 
+-.. only:: html
+-
+-   .. contents::
++.. contents::
+ 
+ 
+ Why does Python use indentation for grouping of statements?
+--- a/Doc/faq/extending.rst
++++ b/Doc/faq/extending.rst
+@@ -2,9 +2,7 @@
+ Extending/Embedding FAQ
+ =======================
+ 
+-.. only:: html
+-
+-   .. contents::
++.. contents::
+ 
+ .. highlight:: c
+ 
+--- a/Doc/faq/general.rst
++++ b/Doc/faq/general.rst
+@@ -4,9 +4,7 @@
+ General Python FAQ
+ ==================
+ 
+-.. only:: html
+-
+-   .. contents::
++.. contents::
+ 
+ 
+ General Information
+--- a/Doc/faq/gui.rst
++++ b/Doc/faq/gui.rst
+@@ -4,9 +4,7 @@
+ Graphic User Interface FAQ
+ ==========================
+ 
+-.. only:: html
+-
+-   .. contents::
++.. contents::
+ 
+ .. XXX need review for Python 3.
+ 
+--- a/Doc/faq/library.rst
++++ b/Doc/faq/library.rst
+@@ -4,9 +4,7 @@
+ Library and Extension FAQ
+ =========================
+ 
+-.. only:: html
+-
+-   .. contents::
++.. contents::
+ 
+ General Library Questions
+ =========================
+--- a/Doc/faq/programming.rst
++++ b/Doc/faq/programming.rst
+@@ -4,9 +4,7 @@
+ Programming FAQ
+ ===============
+ 
+-.. only:: html
+-
+-   .. contents::
++.. contents::
+ 
+ General Questions
+ =================
+--- a/Doc/faq/windows.rst
++++ b/Doc/faq/windows.rst
+@@ -8,9 +8,7 @@
+ Python on Windows FAQ
+ =====================
+ 
+-.. only:: html
+-
+-   .. contents::
++.. contents::
+ 
+ .. XXX need review for Python 3.
+    XXX need review for Windows Vista/Seven?
+--- a/Doc/howto/urllib2.rst
++++ b/Doc/howto/urllib2.rst
+@@ -15,9 +15,11 @@
+     You may also find useful the following article on fetching web resources
+     with Python:
+ 
+-    * `Basic Authentication <https://web.archive.org/web/20201215133350/http://www.voidspace.org.uk/python/articles/authentication.shtml>`_
++    * `Basic Authentication`_
+ 
+-        A tutorial on *Basic Authentication*, with examples in Python.
++      A tutorial on *Basic Authentication*, with examples in Python.
++
++.. _Basic Authentication: https://web.archive.org/web/20201215133350/http://www.voidspace.org.uk/python/articles/authentication.shtml
+ 
+ **urllib.request** is a Python module for fetching URLs
+ (Uniform Resource Locators). It offers a very simple interface, in the form of

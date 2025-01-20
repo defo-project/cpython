@@ -1,0 +1,42 @@
+Description: m68k: Avoid a SIGILL when built with GCC 15
+ Reported to GCC upstream, but determined to be a cpython bug.
+
+Bug-Gcc: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=122211
+Author: John Paul Adrian Glaubitz <glaubitz@debian.org>, Michael Karcher <debian@mkarcher.dialup.fu-berlin.de>
+
+--- a/Include/internal/pycore_pymath.h
++++ b/Include/internal/pycore_pymath.h
+@@ -146,17 +146,17 @@
+     unsigned int old_fpcr, new_fpcr
+ #define _Py_SET_53BIT_PRECISION_START                                   \
+     do {                                                                \
+-        __asm__ ("fmove.l %%fpcr,%0" : "=g" (old_fpcr));                \
++        __asm__ ("fmove.l %%fpcr,%0" : "=dm" (old_fpcr));               \
+         /* Set double precision / round to nearest.  */                 \
+         new_fpcr = (old_fpcr & ~0xf0) | 0x80;                           \
+         if (new_fpcr != old_fpcr) {                                     \
+-              __asm__ volatile ("fmove.l %0,%%fpcr" : : "g" (new_fpcr));\
++            __asm__ volatile ("fmove.l %0,%%fpcr" : : "dm" (new_fpcr)); \
+         }                                                               \
+     } while (0)
+ #define _Py_SET_53BIT_PRECISION_END                                     \
+     do {                                                                \
+         if (new_fpcr != old_fpcr) {                                     \
+-            __asm__ volatile ("fmove.l %0,%%fpcr" : : "g" (old_fpcr));  \
++            __asm__ volatile ("fmove.l %0,%%fpcr" : : "dm" (old_fpcr)); \
+         }                                                               \
+     } while (0)
+ #endif
+--- a/configure.ac
++++ b/configure.ac
+@@ -6040,8 +6040,8 @@
+ AC_CACHE_CHECK([whether we can use gcc inline assembler to get and set mc68881 fpcr], [ac_cv_gcc_asm_for_mc68881], [
+ AC_LINK_IFELSE(   [AC_LANG_PROGRAM([[]], [[
+   unsigned int fpcr;
+-  __asm__ __volatile__ ("fmove.l %%fpcr,%0" : "=g" (fpcr));
+-  __asm__ __volatile__ ("fmove.l %0,%%fpcr" : : "g" (fpcr));
++  __asm__ __volatile__ ("fmove.l %%fpcr,%0" : "=dm" (fpcr));
++  __asm__ __volatile__ ("fmove.l %0,%%fpcr" : : "dm" (fpcr));
+ ]])],[ac_cv_gcc_asm_for_mc68881=yes],[ac_cv_gcc_asm_for_mc68881=no])
+ ])
+ AS_VAR_IF([ac_cv_gcc_asm_for_mc68881], [yes], [
