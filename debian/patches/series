@@ -27,3 +27,4 @@ test-freeze-strip-libdir.diff
 stable-abi-multiarch.diff
 m68k-alignment-fix.diff
 issue127330.diff
+0029-initial-EncryptedClientHello-support-in-ssl-module.patch
