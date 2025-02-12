@@ -1,0 +1,94 @@
+Format: 1.8
+Date: Thu, 05 Dec 2024 21:05:50 +0100
+Source: python3.13
+Binary: idle-python3.13 libpython3.13 libpython3.13-dbg libpython3.13-dev libpython3.13-minimal libpython3.13-stdlib libpython3.13-testsuite python3.13 python3.13-dbg python3.13-dev python3.13-doc python3.13-examples python3.13-full python3.13-gdbm python3.13-minimal python3.13-nopie python3.13-tk python3.13-venv
+Architecture: all amd64
+Version: 3.13.1.4.gc61eef16e0-20250212.062836337910689
+Distribution: testing
+Urgency: medium
+Maintainer: Matthias Klose <doko@debian.org>
+Changed-By: irl <iain@learmonth.me>
+Description:
+ idle-python3.13 - IDE for Python (v3.13) using Tkinter
+ libpython3.13 - Shared Python runtime library (version 3.13)
+ libpython3.13-dbg - Debug Build of the Python Interpreter (version 3.13)
+ libpython3.13-dev - Header files and a static library for Python (v3.13)
+ libpython3.13-minimal - Minimal subset of the Python language (version 3.13)
+ libpython3.13-stdlib - Interactive high-level object-oriented language (standard library
+ libpython3.13-testsuite - Testsuite for the Python standard library (v3.13)
+ python3.13 - Interactive high-level object-oriented language (version 3.13)
+ python3.13-dbg - Debug Build of the Python Interpreter (version 3.13)
+ python3.13-dev - Header files and a static library for Python (v3.13)
+ python3.13-doc - Documentation for the high-level object-oriented language Python
+ python3.13-examples - Examples for the Python language (v3.13)
+ python3.13-full - Python Interpreter with complete class library (version 3.13)
+ python3.13-gdbm - GNU dbm database support for Python (v3.13)
+ python3.13-minimal - Minimal subset of the Python language (version 3.13)
+ python3.13-nopie - Python interpreter linked without PIE (version 3.13)
+ python3.13-tk - Tkinter - Writing Tk applications with Python (v3.13)
+ python3.13-venv - Interactive high-level object-oriented language (pyvenv binary, v
+Changes:
+ python3.13 (3.13.1.4.gc61eef16e0-20250212.062836337910689) UNRELEASED; urgency=medium
+ .
+   * Non-maintainer upload.
+   * Add ECH patch
+Checksums-Sha1:
+ 41327c5dc71a90551d5c06922ff4a6c15b2234d3 441584 idle-python3.13_3.13.1.4.gc61eef16e0-20250212.062836337910689_all.deb
+ 887a78a60b9a879cc17cc727bc0b8cf8ba394084 22898368 libpython3.13-dbg_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 53f94eb961ec105127a9f6aa687f57a10c83526d 5001592 libpython3.13-dev_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 640adf76f7e394eb12d61ea7437b0dc95dafccb4 859340 libpython3.13-minimal_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ eb9376a8dadf13122ed059f50a9980befd2d50eb 1973624 libpython3.13-stdlib_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 79649648a0724d41d5f9ad9c4dab5c0f3bdf1e0b 4620440 libpython3.13-testsuite_3.13.1.4.gc61eef16e0-20250212.062836337910689_all.deb
+ 08b67d639fd773ded9639917740c8a121819c1ae 2151240 libpython3.13_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 694762297c55682141692b20fde60fa39d5165e2 54443212 python3.13-dbg_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 89e1a6d12b2f5b25b801081df310e8f99069c795 504220 python3.13-dev_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 772117b8f285d762052a25880fe4a411c39d759b 15226628 python3.13-doc_3.13.1.4.gc61eef16e0-20250212.062836337910689_all.deb
+ c10eb8302eae5fe24068f0e593fd73a8304a6d34 763316 python3.13-examples_3.13.1.4.gc61eef16e0-20250212.062836337910689_all.deb
+ a832201fb9cdbcb76fbdf47b650de457d5874463 1300 python3.13-full_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 2f71b0741e4116f396f7f7cb1dace293f5748774 30692 python3.13-gdbm_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 2cfd27c82229e0443e0d37e23218a68c3a6d9324 2199456 python3.13-minimal_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ be1effe89f986049df93c6b903651f321e867d68 2189468 python3.13-nopie_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 66ba569d4bfa143504bd94c6ef17dce46238f050 106896 python3.13-tk_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ a21f3d7b57d22295cb3160a376c8f8ee7cde20e6 5492 python3.13-venv_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ a7b7fe50e61b6403bde7741b1410724f4549836a 17593 python3.13_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.buildinfo
+ 6d65b4cc0798409819cf276dc94c691c0a6c0e5b 740004 python3.13_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+Checksums-Sha256:
+ 45368d023791c0ad6ab66640861b7ee3a4fbd643f7badc61e81e787634ca25b8 441584 idle-python3.13_3.13.1.4.gc61eef16e0-20250212.062836337910689_all.deb
+ 78dfc733217899ba7d76b89b442e20368f1b9ef0561386210b33d659b4be0472 22898368 libpython3.13-dbg_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 007a4422c48f58da122b6f8c4b3701edfd9942fea752894adb341ffba1b0da00 5001592 libpython3.13-dev_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 8d4cbd23a64eeb386dda1a4525c4ad88bab3487662c9b99ea6d2020d02010e9d 859340 libpython3.13-minimal_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ f02aa49df05739f9f8effe6b57762ea4579d3a83cace83ec78ddb36096325c75 1973624 libpython3.13-stdlib_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ f2343033ec2c8da7e167520c7b42cfdbcc5246657c9c00f466059e674a0bef5a 4620440 libpython3.13-testsuite_3.13.1.4.gc61eef16e0-20250212.062836337910689_all.deb
+ 110ab9da0b56efc221cecd3523786c6ecaf16d07d41f6c01aafcbdc090de5a2b 2151240 libpython3.13_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ a104ae50b227dd1e3ce2e4bcc402b8558e273465e97279cbf12bc8a4c8948487 54443212 python3.13-dbg_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 3b6614fb2fa59e32b79ac91853afb9fe3ee4f9aaba6683ca0a72ce20a947105b 504220 python3.13-dev_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 4af7c74c4c8aa50a75b0c1f9539ccab0fd03b026e4c17f087730d9b729b385ad 15226628 python3.13-doc_3.13.1.4.gc61eef16e0-20250212.062836337910689_all.deb
+ c938ce76f04cde02830d133ac1909d5ad74ae0482c0f1f101be5639a1a96a3fe 763316 python3.13-examples_3.13.1.4.gc61eef16e0-20250212.062836337910689_all.deb
+ 907c0ce3b301803972c284b631fa8d77c9856e3ff83f75c9dd952d33c701c140 1300 python3.13-full_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ c28a1f39fdd7ff1b8b61eea074abb969527fe4c27f16adc77cb96a584cf5640d 30692 python3.13-gdbm_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 398bf90a138d5d47feb55fba7facf61aeb120f8c423dc4e8d1b81288c9a4b6d1 2199456 python3.13-minimal_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 9214e6caa2e417d3c0d7e5d3060c9fca3e734b1b36faae12f897922c64b85374 2189468 python3.13-nopie_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 9293e6d3d2f06d240256b9062f14fdf67bc4346f414526b181678960844e4499 106896 python3.13-tk_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 881027b1e0f0a946e3b02176e852fe88a3948ecaf29b6e285ac40da68d6fa89d 5492 python3.13-venv_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 10a047b0c122f752171c7c19f11adc16a7941f60e0839742d9b12eea4f7fa101 17593 python3.13_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.buildinfo
+ 28f78070a016175cd9179f48ec69986a4b6f20ca37b023d2bc864738a4818ff6 740004 python3.13_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+Files:
+ 30e47d8ce6529bc7b7da8bd207e339af 441584 python optional idle-python3.13_3.13.1.4.gc61eef16e0-20250212.062836337910689_all.deb
+ db83f59b945c06160ac087c7fdd564ee 22898368 debug optional libpython3.13-dbg_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 3a9210afe279ddd305ff690059931db1 5001592 libdevel optional libpython3.13-dev_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 13e40270f3a5fe719595c51840d09538 859340 python optional libpython3.13-minimal_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 3b553d62311eb02ba9f919fe02ee704a 1973624 python optional libpython3.13-stdlib_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 324678ab668885cf2f95b864c6091f40 4620440 libdevel optional libpython3.13-testsuite_3.13.1.4.gc61eef16e0-20250212.062836337910689_all.deb
+ 46fa66b7f99db60349e636f2005aacad 2151240 libs optional libpython3.13_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 4b659f6215d88e7a2cddba8a215aec55 54443212 debug optional python3.13-dbg_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ cc406f96ec5e8f6f4b08d2f75a12d5a2 504220 python optional python3.13-dev_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 28ad120af32fae512da2c09c5cd6b538 15226628 doc optional python3.13-doc_3.13.1.4.gc61eef16e0-20250212.062836337910689_all.deb
+ d13a02c664e9c79e69231653f2677078 763316 python optional python3.13-examples_3.13.1.4.gc61eef16e0-20250212.062836337910689_all.deb
+ 6553fe317980ecc740469f7169c6ca4a 1300 python optional python3.13-full_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 2296b0dd72a3baf648b5faca35103ca8 30692 python optional python3.13-gdbm_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ b16865bf14e9d8fcfe64e9a821d57a20 2199456 python optional python3.13-minimal_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 1d8cb8d941f3b46f98fea2b0171a7253 2189468 python optional python3.13-nopie_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 3dc608d5520033b020e9d1e16cdb7f46 106896 python optional python3.13-tk_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ aa2beee62eb67639d7eaeab12df5407f 5492 python optional python3.13-venv_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
+ 7366305b2e8241fe068083cd328fdd70 17593 python optional python3.13_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.buildinfo
+ 60a41ab4706e563e5fd2978631dac56a 740004 python optional python3.13_3.13.1.4.gc61eef16e0-20250212.062836337910689_amd64.deb
