@@ -161,7 +161,7 @@ certificate_repr(PySSLCertificate *self)
     /* subject string is ASCII encoded, UTF-8 chars are quoted */
     osubject = _x509name_print(
         get_state_cert(self),
-        X509_get_subject_name(self->cert),
+        (X509_NAME *)X509_get_subject_name(self->cert),
         0,
         XN_FLAG_RFC2253
     );
