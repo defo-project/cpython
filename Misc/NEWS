@@ -1,0 +1,11 @@
++++++++++++
+Python News
++++++++++++
+
+What's New in Python defo-3.15-ech?
+==================================
+
+Most things! This file existing means we don't try build
+it and hence avoice some unmet dependency (blurb/sphinx
+or somesuch).
+

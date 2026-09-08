@@ -1,5 +1,7 @@
 #git-updates.diff
-#patchlevel-noplus.diff
+patchlevel-noplus.diff
+# SF addition: DEfO ECH patch
+2026-08-ECH-in-ssl-module.patch
 deb-locations.diff
 distutils-install-layout.diff
 sysconfig-debian-schemes.diff

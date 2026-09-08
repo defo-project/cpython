@@ -890,7 +890,12 @@ stamps/stamp-install: stamps/stamp-build control-file stamps/stamp-control
 	install -d $(d)/usr
 	install -d $(d)/$(scriptdir)/lib-dynload
 ifeq ($(with_interp),static)
+	# SF addition
+	env
+	df -h
 	$(MAKE) -C $(buildd_static) install DESTDIR=$(CURDIR)/$(d)
+	# SF addition
+	df -h
 	ls -l $(d)/$(scriptdir)/_sysconfigdata*
 	sed $(sysconfig_substflags) \
 		$(buildd_shared)/$(shell cat $(buildd_shared)/pybuilddir.txt)/_sysconfigdata__$(PLAT)_$(DEB_HOST_MULTIARCH).py \

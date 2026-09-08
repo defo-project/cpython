@@ -1,0 +1,108 @@
+name: builder
+
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    - cron: '00 9 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-26.04
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Cache ccache
+        uses: actions/cache@v4
+        with:
+          path: /home/runner/.cache/ccache
+          key: ccache
+
+      - name: Prepare build environment
+        run: |
+          # SF addition: Aggressive cleanup
+          # Remove Java (JDKs)
+          sudo rm -rf /usr/lib/jvm
+          # Remove .NET SDKs
+          sudo rm -rf /usr/share/dotnet
+          # Remove Swift toolchain
+          sudo rm -rf /usr/share/swift
+          # Remove Haskell (GHC)
+          sudo rm -rf /usr/local/.ghcup
+          # Remove Julia
+          sudo rm -rf /usr/local/julia*
+          # Remove Android SDKs
+          sudo rm -rf /usr/local/lib/android
+          # Remove Chromium (optional if not using for browser tests)
+          sudo rm -rf /usr/local/share/chromium
+          # Remove Microsoft/Edge and Google Chrome builds
+          sudo rm -rf /opt/microsoft /opt/google
+          # Remove Azure CLI
+          sudo rm -rf /opt/az
+          # Remove PowerShell
+          sudo rm -rf /usr/local/share/powershell
+          # Remove CodeQL and other toolcaches
+          sudo rm -rf /opt/hostedtoolcache
+          df -h
+          # try make /tmp bigger - looks like that fails, but as a side-effect
+          # results in /tmp being umounted, and so we end up with /tmp being a
+          # directory in the root partition and hence we have loads of space!
+          # FIXME: figure out what's better
+          sudo mount -o remount,size=20G /tmp
+          # back to the usual biz...
+          sudo DEBIAN_FRONTEND=noninteractive apt -U install -y --no-install-recommends sbuild mmdebstrap debian-archive-keyring ccache uidmap autopkgtest podman passt dbus-user-session
+
+          autopkgtest-build-podman --init=systemd --release testing -t debian-testing --post-command="apt install -y ca-certificates"
+
+          ccache --zero-stats --max-size=20.0G
+          chmod a+X "$HOME" "$HOME/.cache"
+          chmod -R a+rwX "$HOME/.cache/ccache"
+
+          cat << "EOF" > "$HOME/.sbuildrc"
+          push @{$unshare_mmdebstrap_extra_args}, qr/^testing$/, ["--keyring=/usr/share/keyrings/debian-archive-keyring.gpg", "--include=ccache,ca-certificates", "--chrooted-customize-hook=update-ccache-symlinks"];
+          $clean_source = 0;
+
+          $build_environment = { "CCACHE_DIR" => "/build/ccache" };
+          $path = "/usr/lib/ccache:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games";
+          $build_path = "/build/package/";
+          $dsc_dir = "package";
+          $unshare_bind_mounts = [ { directory => "$HOME/.cache/ccache", mountpoint => "/build/ccache" } ];
+          $verbose = 1;
+          $run_lintian = 0;
+          # SF: set below to zero, probably a bad plan
+          $run_autopkgtest = 0;
+          $autopkgtest_root_args = 'PATH=/usr/sbin:/usr/bin:/sbin:/bin';
+          $autopkgtest_opts = ['--apt-upgrade', '--add-apt-source=deb [trusted=yes] https://github.com/defo-project/openssl/raw/packages/ /', '--', 'podman', '--init', 'debian-testing'];
+          # SF: set below to zero, probably a bad plan
+          $autopkgtest_require_success = 0;
+          EOF
+          mkdir "$HOME/apt_repo"
+
+      - name: Run sbuild
+        run: |
+          export AUTOPKGTEST_TMP="$HOME/defo-tmp"
+          mkdir -p "$AUTOPKGTEST_TMP"
+          export TMPDIR="$HOME/defo-podman-tmp"
+          mkdir -p "$TMPDIR"
+          sed -i "1 s/([^)]*)/(1:$(git describe --tags | sed 's/^[^0-9]*//;s/-/./g;s/_/./g')-$(date -u '+%Y%m%d.%H%M%S%N'))/" debian/changelog
+          sbuild -d testing \
+            --extra-repository="deb [trusted=yes] https://github.com/defo-project/openssl/raw/packages/ ./" \
+            --dpkg-source-opts="-Zgzip -z1 --format=1.0 -sn" --build-dir="$HOME/apt_repo"
+          cd "$HOME/apt_repo"
+          apt-ftparchive packages . > Packages
+          apt-ftparchive release . > Release
+
+      - name: Upload apt repository
+        run: |
+          cd "$HOME/apt_repo"
+          BRANCH=packages
+          REPOSITORY="$(printf "%s" "$GITHUB_REPOSITORY" | tr / _)"
+          echo "echo \"deb [trusted=yes] $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/raw/$BRANCH/ /\" | sudo tee /etc/apt/sources.list.d/$REPOSITORY.list" >> README.md
+          git init -b "$BRANCH"
+          git remote add origin "$(echo "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git" | sed "s#https://#https://x-access-token:${{ secrets.GITHUB_TOKEN }}@#")"
+          git add .
+          git -c user.name=Github -c user.email=none commit --message="Generated with $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          git push --force origin "$BRANCH"
