@@ -1,0 +1,447 @@
+Package: idle-python3.15
+Architecture: all
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Priority: optional
+Section: python
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 1924
+Depends: python3.15, python3-tk, python3.15-tk, libjs-mathjax
+Enhances: python3.15
+Filename: ./idle-python3.15_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_all.deb
+Size: 440900
+MD5sum: 2fe9df94ca279baf9db8b3bea800a965
+SHA1: 027a7f656915fc7f7676c8e0e78b1bb37ddd2b92
+SHA256: e4c8be0169208099cabf9cbef9d268afe8fda2511a98780b3ff388329cddf32f
+SHA512: 54127094eb96eb353ce4d789bab7fec64149ecfe33c58832540fb4ce3905b03f65c8ad452f1ba1e45c223f05b162b95c7f63704b7efd720f5ab9aff3b0af528c
+Description: IDE for Python (v3.15) using Tkinter
+ IDLE is an Integrated Development Environment for Python (v3.15).
+ IDLE is written using Tkinter and therefore quite platform-independent.
+
+Package: libpython3.15-dbg
+Architecture: amd64
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Multi-Arch: same
+Priority: optional
+Section: debug
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 151861
+Depends: libpython3.15-stdlib (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), libbz2-1.0, libc6 (>= 2.42), libdb5.3t64, libexpat1 (>= 2.8.0), libffi8 (>= 3.4), libgcc-s1 (>= 3.0), libgdbm6t64 (>= 1.16), liblzma5 (>= 5.1.1alpha+20120614), libncursesw6 (>= 6.1), libreadline8t64 (>= 7.0~beta), libsqlite3-0 (>= 3.36.0), libssl4 (>= 1:4.0.POST.CLANG.FORMAT.WEBKIT.2520.g80ef37cabc), libtcl8.6 (>= 8.6.0), libtinfo6 (>= 6), libtk8.6 (>= 8.6.0), libuuid1 (>= 2.20.1), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.2.3.4)
+Breaks: python3-gdbm-dbg (<< 3.12.5-2~), python3-tk-dbg (<< 3.12.5-2~)
+Replaces: python3-gdbm-dbg (<< 3.12.5-2~), python3-tk-dbg (<< 3.12.5-2~)
+Filename: ./libpython3.15-dbg_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_amd64.deb
+Size: 29813096
+MD5sum: 921fb626efe69e55792410c4b311a3df
+SHA1: d1d58d8b5e4023f4127b2ea1cffd1b089c716ba5
+SHA256: 05e71425de993935683a1dc19555fdc44c9a5cb19aec23284994afca6327da97
+SHA512: 39102aafea8151e446190fc5c955c4a58caafe063a1719d944f80afe366781a22528e508e98255c0f44da550858524d364a8e18254a24c936a223c6fd986a7c0
+Description: Debug Build of the Python Interpreter (version 3.15)
+ The package holds two things:
+ .
+ - Extensions for a Python interpreter configured with --pydebug.
+ - Debug information for standard python extensions.
+ .
+ See the README.debug for more information.
+
+Package: libpython3.15-dev
+Architecture: amd64
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Multi-Arch: same
+Priority: optional
+Section: libdevel
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 32784
+Depends: libpython3.15-stdlib (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), libpython3.15 (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), libexpat1-dev, zlib1g-dev
+Recommends: libc6-dev | libc-dev
+Filename: ./libpython3.15-dev_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_amd64.deb
+Size: 6353084
+MD5sum: 5cfe003e2b7a193541fccbbf548c5588
+SHA1: 45ec77a6c6cb50a0ff3ab3d0821ce00f0b31767f
+SHA256: 90bba97326e86bf3eb569529adf9b6b99ed88e94b00aa9cc8654fe0a56d5abaa
+SHA512: a681315d2e9fd517dad5becf9c8dd77b70b53da7640e8489ae4c9ed5e5b27b9ee5437a7692769549438f8a7e777fc35f46ca5d304db1b74d5352c13aa1615202
+Description: Header files and a static library for Python (v3.15)
+ Header files, a static library and development tools for building
+ Python (v3.15) modules, extending the Python interpreter or embedding
+ Python (v3.15) in applications.
+ .
+ Maintainers of Python packages should read README.maintainers.
+ .
+ This package contains development files. It is normally not
+ used on it's own, but as a dependency of python3.15-dev.
+
+Package: libpython3.15-minimal
+Architecture: amd64
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Multi-Arch: same
+Priority: optional
+Section: python
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 5797
+Depends: libc6 (>= 2.14), libssl4 (>= 1:4.0.POST.CLANG.FORMAT.WEBKIT.2520.g80ef37cabc)
+Recommends: libpython3.15-stdlib
+Conflicts: binfmt-support (<< 1.1.2)
+Breaks: libpython3.15-stdlib (<< 3.13.1-3~)
+Replaces: libpython3.15-stdlib (<< 3.13.1-3~)
+Filename: ./libpython3.15-minimal_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_amd64.deb
+Size: 925764
+MD5sum: 0f98ea0daec25bb0ac23ab0bf01ba8ef
+SHA1: b2e822677b2204c96fac46b77bdf458c7d586855
+SHA256: 825c8da8af11d709f2f0101097e8f27b8f4df6446b3bf361be0d7193ae70e98c
+SHA512: b6c8ff816dcca7cdb321769ba9bd668da64c86ee85020403cbbd37f4567c634109d6f97ea84f0f0958c433bf2213eec8da54d90b9c88144b01e24d6f6d8242c3
+Description: Minimal subset of the Python language (version 3.15)
+ This package contains some essential modules. It is normally not
+ used on it's own, but as a dependency of python3.15-minimal.
+
+Package: libpython3.15-stdlib
+Architecture: amd64
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Multi-Arch: same
+Priority: optional
+Section: python
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 13169
+Depends: libpython3.15-minimal (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), media-types | mime-support, netbase, tzdata, libbz2-1.0, libc6 (>= 2.42), libdb5.3t64, libffi8 (>= 3.4), liblzma5 (>= 5.1.1alpha+20120614), libncursesw6 (>= 6.1), libreadline8t64 (>= 7.0~beta), libsqlite3-0 (>= 3.36.0), libtinfo6 (>= 6), libuuid1 (>= 2.20.1), libzstd1 (>= 1.5.5)
+Filename: ./libpython3.15-stdlib_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_amd64.deb
+Size: 3046236
+MD5sum: b13948670a5690a249886c4ea9ef47c2
+SHA1: 0bbcef98631812c97be004a8cda88a58be058f9d
+SHA256: 9373b0ed805fa1f6aac44dae0a790c6175f15a06ff7b795b4a42b1f6632db060
+SHA512: ca70bb20767d91fee9ad5954133bb892f74546e957dd1f4e5f45df2417c1933b96383c48532e749fafda8932857bf7baa10798f38d6db03f41fed9a03b904593
+Description: Interactive high-level object-oriented language (standard library, version 3.15)
+ Python is a high-level, interactive, object-oriented language. Its 3.15 version
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+ .
+ This package contains Python 3.15's standard library. It is normally not
+ used on its own, but as a dependency of python3.15.
+
+Package: libpython3.15-testsuite
+Architecture: all
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Priority: optional
+Section: libdevel
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 35740
+Depends: python3.15 (>= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), net-tools
+Suggests: python3-gdbm, python3-tk
+Filename: ./libpython3.15-testsuite_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_all.deb
+Size: 5622264
+MD5sum: 6bf21d2b8a2da03a2cc11737ee4aaef1
+SHA1: 1fe0c4c3045e4d441e5a89f080a64d7367d0d665
+SHA256: e4137e1e474ed0cb2525d1ab4f1224c3a4cb83245998da860158b3f6062799a9
+SHA512: c6586a198604ecb6dbd48c9194b04d72af969e3f6b349e7ffd52df97824fff68321d41bb6f2a71213d012a7838b1251f6558eb1524aafd2d62fd40aee7957dc3
+Description: Testsuite for the Python standard library (v3.15)
+ The complete testsuite for the Python standard library.  Note that
+ a subset is found in the libpython3.15-stdlib package, which should
+ be enough for other packages to use (please do not build-depend
+ on this package, but file a bug report to include additional
+ testsuite files in the libpython3.15-stdlib package).
+
+Package: libpython3.15
+Architecture: amd64
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Multi-Arch: same
+Priority: optional
+Section: libs
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 9344
+Depends: libpython3.15-stdlib (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), libc6 (>= 2.38), libexpat1 (>= 2.8.0), libgcc-s1 (>= 3.0), zlib1g (>= 1:1.2.3.4)
+Replaces: libpython3.15
+Filename: ./libpython3.15_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_amd64.deb
+Size: 2667708
+MD5sum: 2dbbd0fb4c340f05ea499152923b6878
+SHA1: d23f673e326d21f2ac96110a8edd8e436811369f
+SHA256: ce748a39a667510869339ea3f5e06fd4c83707d032d8e7685027cdcd5c48a4e8
+SHA512: b4da779ac639465fbb58be7cd8bf607bf1c4d7b78552135162228f64c9bbcad85289b0816e21c68d607895a2c20f3d3e1aac007b1fbd67f3db0247dba1d00c55
+Description: Shared Python runtime library (version 3.15)
+ Python is a high-level, interactive, object-oriented language. Its 3.15 version
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+ .
+ This package contains the shared runtime library, normally not needed
+ for programs using the statically linked interpreter.
+
+Package: python3.15-dbg
+Architecture: amd64
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Multi-Arch: allowed
+Priority: optional
+Section: debug
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 113737
+Depends: python3.15 (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), libpython3.15-dbg (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), libc6 (>= 2.42), libexpat1 (>= 2.8.0), libgcc-s1 (>= 3.0), zlib1g (>= 1:1.2.3.4)
+Recommends: gdb
+Suggests: python3-gdbm-dbg, python3-tk-dbg
+Filename: ./python3.15-dbg_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_amd64.deb
+Size: 69465044
+MD5sum: f75460f42fdc11dd6bae9be989772bf5
+SHA1: 235aeb8aec2f3b91ac8a84351cd824cad56eaa9b
+SHA256: 5de3b759ed1c181bfbb93d2b8dbc8fc69050efb23b1c690eb535a5d63187fbdd
+SHA512: 5ebc4b8ce512d12fcbcfe021b0edb4c3851e5fe26618c29599fdc8a222dc83638f617d32f19c36787d2a82cddfa948964dd4176cf9a6f9a1194da9a81aabce3f
+Description: Debug Build of the Python Interpreter (version 3.15)
+ The package holds two things:
+ .
+ - A Python interpreter configured with --pydebug. Dynamically loaded modules
+   are searched as <foo>_d.so first. Third party extensions need a separate
+   build to be used by this interpreter.
+ - Debug information for standard python interpreter and extensions.
+ .
+ See the README.debug for more information.
+Build-Ids: 046237c460e2502607881e71939023ad2d04b7c0 089f74714439d48a598b174cec3d34cd91836f8c 1693bea1d08de73877669c8668c1fdf5ee8aeb32 1a34f7fbe13ceec8381881cb28f04e65f7bd06e9 1c44fe031ea08d8886a1baeb0a148157fe1c0af6 24fc8c93b19af94e63b3441f2313e2fc9aba418e 2523f97340dc2a23584726d544cb2427d94385a0 26abc6b705255c7af78924bec55210a08dd49009 336b136eb78bc31a6cef6cf52af6226e1a6d8c5b 36d03df517c5553a08d2ac376d7c07009ed1757d 392695a29187f55e18a045444e6679462f61e458 3a3dcc1d6e9a2d0adffac595a2ab2316e773eab0 3c05940178588e419a7c0160320810a861519c34 427e7a6c323ff6fcc9fe95bd84d474f1254fa5b9 4409294f1b0df81b029f2fbd895182bd62930efd 44d37d9b5aa8a5c90a76cd4e2b4969828467b6d2 48ec57276714f38607eab13d498e4d91477fd17e 499c770910513ce39cb43719dfc522fc5bc19d53 4ad74575752c23472356e02a383e68aa7b599e55 4bb0bd86e39f25788f02dbdaf2b3293e7dd38e61 4eebf2c242166d6b021a6785beb5d6ae28be68c6 4fcade05d880cfff394b659f7a4acbe5ea419d66 5573802f814aadd26f9b20db15f4d7572448a247 5d59483e4a4f995b46ebb18604e8e11839bc421f 660c2a6a7f3175fda383f78a8c0e767657fac34b 6b85bab13f95ebeba9103407d76491ef231dde44 74bbe466e5fc2faf562a817b7138c889b1689fc8 74c9c867225c29f73677ad6f9b91c78e2b6330d2 755895de7b98f4d1243bfd2415cd8d610002870f 831158b290157c870b7ee85bf9b15c5b09b63d5d 85cb442f0607ad959da11a09c65429c1729f4f24 91c0869126f631622f39c1efc2b1d0623a77f4f1 9fef2da4cf2d4a155aeef703da0f77738aff3334 aab4d2660dc98a254ab311de34ba6de163ea7add afa60e5824618710979646521057f58a2b2f7b59 b3ea4032d1c18ce87de82b9a88f7aafb8478b92a bb4b83aaec980e2a09eaebe2caa10e8b320eb640 bd7fa9b71acbc90e12e456e5b8e293665b225607 ca045c30050594518e7c3d52c4d65d9a583d9692 ca5c8003943aa6476db60524966955c71c04f931 d1ce0665fae6d3e9eb710e7d7d91911c749e08a9 d9c319b85e8774d00c2f42cda0b7538f4947fdd5 dd251aea2aaf8a354173f1b02a86dc20ca418ee7 e064523109e8614f2d044378a5437304320bea56 e1633df8666010895e798ee6ad61d81faa7dc128 e1bd9cd87ce65b85bff7028d72177b217657e29b ea92b7aec90e1d83e71b3d580693c5de32f1bf8f eed0092c87031d8061641b99ee715360e1c98690 f03093dbced94aec5d08a71c6a39b81dfff2e5a8 f07dc51622d93c97aff290c49438eaf012442ee9 f0c082ee4e723f549b8c3706ed2b16312a44986b f48dbef1f9db1cf32ca7c0218a59ea51c8c00366 f48f50695d26a8635f01243be40175a0bc88585d
+
+Package: python3.15-dev
+Architecture: amd64
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Multi-Arch: allowed
+Priority: optional
+Section: python
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 502
+Depends: python3.15 (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), libpython3.15-dev (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), libpython3.15 (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797)
+Recommends: libc6-dev | libc-dev
+Filename: ./python3.15-dev_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_amd64.deb
+Size: 498552
+MD5sum: 63864ac432fce888746ca07b57726fa5
+SHA1: 412a43f1f0454e997e4aab15d4486a5234baa0ff
+SHA256: 7bdd0471fe41b9dd89d55be07f1b4189cf882cf1f17e9bd35ce5dfa45c40d991
+SHA512: d315c2a162d501ead84d9f5329ba1856b208060c218f3a57f752abe978bbb7620a4fce816e8525400976867438440f610a84a106d6c2ede6797137b05683ee3c
+Description: Header files and a static library for Python (v3.15)
+ Header files, a static library and development tools for building
+ Python (v3.15) modules, extending the Python interpreter or embedding
+ Python (v3.15) in applications.
+ .
+ Maintainers of Python packages should read README.maintainers.
+
+Package: python3.15-doc
+Architecture: all
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Multi-Arch: foreign
+Priority: optional
+Section: doc
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 91202
+Depends: libjs-jquery, libjs-underscore
+Suggests: python3.15
+Filename: ./python3.15-doc_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_all.deb
+Size: 25267092
+MD5sum: 6ce9a6ad14fca7beb511d16ae83c58bb
+SHA1: 3e24845133aa9867e4f6e5b6bd1bffeb40e528ab
+SHA256: d79a38a06f14fe73fafc1d2df0e30f5a8ef31d9dbfb5c7ec01f81ba73638ddcc
+SHA512: e1f51fbad2080f49f679e927a06b850b1445a846bb6c1b9e40fd88e7d84cee3e6b635b7e69cbb82be0ca2c17e480e95083aa561443bac22412f20cbd58c233e6
+Description: Documentation for the high-level object-oriented language Python (v3.15)
+ These is the official set of documentation for the interactive high-level
+ object-oriented language Python (v3.15). All documents are provided
+ in HTML format. The package consists of ten documents:
+ .
+   * What's New in Python3.15
+   * Tutorial
+   * Python Library Reference
+   * Macintosh Module Reference
+   * Python Language Reference
+   * Extending and Embedding Python
+   * Python/C API Reference
+   * Installing Python Modules
+   * Documenting Python
+   * Distributing Python Modules
+
+Package: python3.15-examples
+Architecture: all
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Priority: optional
+Section: python
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 3218
+Depends: python3.15:any (>= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797)
+Filename: ./python3.15-examples_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_all.deb
+Size: 809560
+MD5sum: 7d73cdcb57c63ad9b670198e7bd6b28e
+SHA1: 360d8f5a633b07ee31e5bc70c2b1bb3470d0f4cb
+SHA256: 65e30b4f86ee8746035ad94d2e9ae26d217e9847c0e15256c6634a065983cccc
+SHA512: a81d31f6efb63191a1df6dc9b76d742fd32bf509d7b9123a55e0a7ee161f84e6bd3333db71dfc932f9d98b5c328ef89d8af5f626f46631b82cb331a6ea766667
+Description: Examples for the Python language (v3.15)
+ Examples, Demos and Tools for Python (v3.15). These are files included in
+ the upstream Python distribution (v3.15).
+
+Package: python3.15-full
+Architecture: amd64
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Multi-Arch: allowed
+Priority: optional
+Section: python
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 6
+Depends: python3.15 (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), libpython3.15-testsuite, python3.15-venv (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), idle-python3.15, python3.15-gdbm, python3.15-tk, ca-certificates
+Recommends: python3.15-doc, python3.15-examples
+Suggests: python3.15-dev
+Filename: ./python3.15-full_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_amd64.deb
+Size: 1296
+MD5sum: aa6382f412a35e8569cf7852dbd93ca1
+SHA1: 80ad44f3334aa534a99204a5a450d646c70b90ef
+SHA256: 51cd89556a3635dd7cc318e4f2ecbeb3e15a33cf9771f237b05e13f9c6c5e400
+SHA512: f83bd418d5187f5db3b6a2da4e7c8dafdf2e46b1cf7904ae57429ec011c6be1aed19d3708cd7799947199e3130062131e9c93eadabe2abaee54ab92a28c549a2
+Description: Python Interpreter with complete class library (version 3.15)
+ Python, the high-level, interactive object oriented language,
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+ .
+ This package is a dependency package, which depends on the full
+ standard library of Python for Python developers. Including modules
+ used only at build-time, such as venv, and modules with complex
+ dependencies, such as tk and IDLE. All batteries included.
+ .
+ According to the Debian Python policy, this package must not be used in
+ build dependencies, dependencies and recommendations.
+
+Package: python3.15-gdbm
+Architecture: amd64
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Priority: optional
+Section: python
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 96
+Depends: libc6 (>= 2.2.5), libgdbm6t64 (>= 1.16)
+Breaks: python3-gdbm (<< 3.12.5-2~)
+Replaces: python3-gdbm (<< 3.12.5-2~)
+Enhances: python3.15
+Filename: ./python3.15-gdbm_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_amd64.deb
+Size: 28668
+MD5sum: cd4c3c7dd002da854117c8cc51e26784
+SHA1: f398a21b6dfcccca8d56ccd5bbd3607bdecf1a1a
+SHA256: 2d3d9dbf69a391774478ac6415eae5aa7bf09a12ef8899be4e34932bed2cb3ba
+SHA512: e3f77a4f557f7748984fd832cbe5273c9e14e084879794859c9966e03e793195acb2cc07e5da3fc7cb6aac209a0dc88fd341284771737b04e1bbae2df65610b0
+Description: GNU dbm database support for Python (v3.15)
+ GNU dbm database module for Python. Install this if you want to
+ create or read GNU dbm database files with Python.
+
+Package: python3.15-minimal
+Architecture: amd64
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Multi-Arch: allowed
+Priority: optional
+Section: python
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 8785
+Pre-Depends: libc6 (>= 2.38)
+Depends: libpython3.15-minimal (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), libexpat1 (>= 2.8.0), libgcc-s1 (>= 3.0), zlib1g (>= 1:1.2.3.4)
+Recommends: python3.15
+Suggests: binfmt-support
+Conflicts: binfmt-support (<< 1.1.2)
+Filename: ./python3.15-minimal_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_amd64.deb
+Size: 2825968
+MD5sum: dc7910f3bb70078b262572e13991e573
+SHA1: 8f207b4773fc727e0a8fe31b1527de1a81b68408
+SHA256: 72263f6977ff5accf4989035fed55400507586a0777ab9272cf5cb3baa8aad40
+SHA512: 55128d17d5472924e03c69e60fb5e0d6ca226c8766d0d2e93da471cbab8596b7393409740bbccabe3d0a1be0f545dcf77978aa59a1572b7450d62e19d97b81b2
+Description: Minimal subset of the Python language (version 3.15)
+ This package contains the interpreter and some essential modules.  It can
+ be used in the boot process for some basic tasks.
+ See /usr/share/doc/python3.15-minimal/README.Debian for a list of the modules
+ contained in this package.
+Cnf-Visible-Pkgname: python3.15
+
+Package: python3.15-nopie
+Architecture: amd64
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Multi-Arch: allowed
+Priority: optional
+Section: python
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 8764
+Depends: python3.15-minimal (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), libc6 (>= 2.38), libexpat1 (>= 2.8.0), libgcc-s1 (>= 3.0), zlib1g (>= 1:1.2.3.4)
+Filename: ./python3.15-nopie_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_amd64.deb
+Size: 2814060
+MD5sum: 65bae6f82a088d37884b659369dd5300
+SHA1: f2e4ec00963758bd1404fa3947cb27f2e999a4b3
+SHA256: a6375a20c8726b15b35ca4cda456bd0221f842e4977077f85a7a1c390771a8fb
+SHA512: d4c83f254963c07d1d6e045a3d5a7fd2af7053eda79920f9ff23dde737a7e71e541880b9324ae16d7bd2783ae068875f76cfebeac3a060ba6d041fac286ffec1
+Description: Python interpreter linked without PIE (version 3.15)
+ This package contains the interpreter not built as position independent
+ executable. This interpreter is diverting the python3.15 executable, and making
+ the interpreter built with PIE available as python3.15-pie.
+Cnf-Visible-Pkgname: python3.15
+
+Package: python3.15-tk
+Architecture: amd64
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Priority: optional
+Section: python
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 456
+Depends: libc6 (>= 2.2.5), libtcl8.6 (>= 8.6.0), libtk8.6 (>= 8.6.0)
+Suggests: tix
+Breaks: python3-tk (<< 3.12.5-2~)
+Replaces: python3-tk (<< 3.12.5-2~)
+Enhances: python3.15
+Filename: ./python3.15-tk_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_amd64.deb
+Size: 108276
+MD5sum: 7f7c84d6aecf530568996272f13084ba
+SHA1: ae156fc57dfa3c8190c59fd0240da0b9cd61dead
+SHA256: d35ac3c0d22bbd408bddc696d7bc2f2bdae1721cc2a610e1a4aad9660df1e994
+SHA512: c78715a735612f52772c947ed370fb38a2e2f82ce3160fcd43a62092fb22dd5095423572fcd937ef8cea0642f0e52463df178aa4572785318cc45463b31d638d
+Description: Tkinter - Writing Tk applications with Python (v3.15)
+ A module for writing portable GUI applications with Python (v3.15) using Tk.
+ Also known as Tkinter.
+Python-Version: 3.15
+
+Package: python3.15-venv
+Architecture: amd64
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Multi-Arch: allowed
+Priority: optional
+Section: python
+Source: python3.15
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 27
+Depends: python3.15 (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), python3-pip-whl (>= 22.2), python3-setuptools-whl (>= 70.1)
+Breaks: python3-pip (<< 1.5.6-4)
+Filename: ./python3.15-venv_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_amd64.deb
+Size: 5572
+MD5sum: 1f88cc0bf296f52fe30898338b750d1d
+SHA1: ebc5ac80d62c7288720254b6ef443a92d2b3c7f6
+SHA256: b4f753bcc6b779c2bead37b07ecb679cf81fbb37738baf0952b32de53640ab00
+SHA512: 4acc8d13b1bae3c6ef5a31593cb5f93466afaf32a8432a33d579397b1396b8dc34dd8ba6f389b453cdd7f34f96e48b1afd2423b3049dcc7996e89be7cae6d995
+Description: Interactive high-level object-oriented language (pyvenv binary, version 3.15)
+ Python is a high-level, interactive, object-oriented language. Its 3.15 version
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+ .
+ This package contains the pyvenv-3.15 binary.
+
+Package: python3.15
+Architecture: amd64
+Version: 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797
+Multi-Arch: allowed
+Priority: optional
+Section: python
+Maintainer: Matthias Klose <doko@debian.org>
+Installed-Size: 151
+Depends: python3.15-minimal (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), libpython3.15-stdlib (= 1:3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797), media-types | mime-support, tzdata
+Recommends: ca-certificates
+Suggests: python3.15-venv, python3.15-doc, binutils
+Breaks: python3-all (<< 3.6.5~rc1-1), python3-dev (<< 3.6.5~rc1-1), python3-venv (<< 3.6.5-2)
+Filename: ./python3.15_3.14.0a2.7894.g4c2f2791f30-20260912.213813090425797_amd64.deb
+Size: 57068
+MD5sum: 7ef13714542998c3af2795d5565cdcdc
+SHA1: 12a29367e508f10e3984aaf3dc2bfcf8f6c4eed2
+SHA256: 34bdeab229df6d5b6d75e2e909ef10f94b72340af24fc754e2ebe834ad849ff9
+SHA512: 86aefe6e4be3336116a829823f1823b9edf36038b1c010df45c5723b8cb6550f33696be423bf870102896c50593324ee7741a96e7aff79c9ec596469b70b38e9
+Description: Interactive high-level object-oriented language (version 3.15)
+ Python is a high-level, interactive, object-oriented language. Its 3.15 version
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+
