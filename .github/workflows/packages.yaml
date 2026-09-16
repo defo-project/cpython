@@ -23,36 +23,9 @@ jobs:
 
       - name: Prepare build environment
         run: |
-          # SF addition: Aggressive cleanup
-          # Remove Java (JDKs)
-          sudo rm -rf /usr/lib/jvm
-          # Remove .NET SDKs
-          sudo rm -rf /usr/share/dotnet
-          # Remove Swift toolchain
-          sudo rm -rf /usr/share/swift
-          # Remove Haskell (GHC)
-          sudo rm -rf /usr/local/.ghcup
-          # Remove Julia
-          sudo rm -rf /usr/local/julia*
-          # Remove Android SDKs
-          sudo rm -rf /usr/local/lib/android
-          # Remove Chromium (optional if not using for browser tests)
-          sudo rm -rf /usr/local/share/chromium
-          # Remove Microsoft/Edge and Google Chrome builds
-          sudo rm -rf /opt/microsoft /opt/google
-          # Remove Azure CLI
-          sudo rm -rf /opt/az
-          # Remove PowerShell
-          sudo rm -rf /usr/local/share/powershell
-          # Remove CodeQL and other toolcaches
-          sudo rm -rf /opt/hostedtoolcache
-          df -h
-          # try make /tmp bigger - looks like that fails, but as a side-effect
-          # results in /tmp being umounted, and so we end up with /tmp being a
-          # directory in the root partition and hence we have loads of space!
-          # FIXME: figure out what's better
-          sudo mount -o remount,size=20G /tmp
-          # back to the usual biz...
+          # The tmpfs on /tmp became too small
+          sudo umount -l /tmp
+
           sudo DEBIAN_FRONTEND=noninteractive apt -U install -y --no-install-recommends sbuild mmdebstrap debian-archive-keyring ccache uidmap autopkgtest podman passt dbus-user-session
 
           autopkgtest-build-podman --init=systemd --release testing -t debian-testing --post-command="apt install -y ca-certificates"
@@ -72,21 +45,15 @@ jobs:
           $unshare_bind_mounts = [ { directory => "$HOME/.cache/ccache", mountpoint => "/build/ccache" } ];
           $verbose = 1;
           $run_lintian = 0;
-          # SF: set below to zero, probably a bad plan
-          $run_autopkgtest = 0;
+          $run_autopkgtest = 1;
           $autopkgtest_root_args = 'PATH=/usr/sbin:/usr/bin:/sbin:/bin';
           $autopkgtest_opts = ['--apt-upgrade', '--add-apt-source=deb [trusted=yes] https://github.com/defo-project/openssl/raw/packages/ /', '--', 'podman', '--init', 'debian-testing'];
-          # SF: set below to zero, probably a bad plan
-          $autopkgtest_require_success = 0;
+          $autopkgtest_require_success = 1;
           EOF
           mkdir "$HOME/apt_repo"
 
       - name: Run sbuild
         run: |
-          export AUTOPKGTEST_TMP="$HOME/defo-tmp"
-          mkdir -p "$AUTOPKGTEST_TMP"
-          export TMPDIR="$HOME/defo-podman-tmp"
-          mkdir -p "$TMPDIR"
           sed -i "1 s/([^)]*)/(1:$(git describe --tags | sed 's/^[^0-9]*//;s/-/./g;s/_/./g')-$(date -u '+%Y%m%d.%H%M%S%N'))/" debian/changelog
           sbuild -d testing \
             --extra-repository="deb [trusted=yes] https://github.com/defo-project/openssl/raw/packages/ ./" \
