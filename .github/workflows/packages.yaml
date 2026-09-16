@@ -55,6 +55,10 @@ jobs:
 
       - name: Run sbuild
         run: |
+          export AUTOPKGTEST_TMP="$HOME/defo-tmp"
+          mkdir -p "$AUTOPKGTEST_TMP"
+          export TMPDIR="$HOME/defo-podman-tmp"
+          mkdir -p "$TMPDIR"
           sed -i "1 s/([^)]*)/(1:$(git describe --tags | sed 's/^[^0-9]*//;s/-/./g;s/_/./g')-$(date -u '+%Y%m%d.%H%M%S%N'))/" debian/changelog
           sbuild -d testing \
             --extra-repository="deb [trusted=yes] https://github.com/defo-project/openssl/raw/packages/ ./" \
