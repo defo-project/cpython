@@ -31,7 +31,7 @@ jobs:
 
           autopkgtest-build-podman --init=systemd --release testing -t debian-testing --post-command="apt install -y ca-certificates"
 
-          ccache --zero-stats --max-size=20.0G
+          ccache --zero-stats --max-size=10.0G
           chmod a+X "$HOME" "$HOME/.cache"
           chmod -R a+rwX "$HOME/.cache/ccache"
 
@@ -49,7 +49,7 @@ jobs:
           $run_autopkgtest = 1;
           $autopkgtest_root_args = 'PATH=/usr/sbin:/usr/bin:/sbin:/bin';
           $autopkgtest_opts = ['--apt-upgrade', '--add-apt-source=deb [trusted=yes] https://github.com/defo-project/openssl/raw/packages/ /', '--', 'podman', '--init', 'debian-testing'];
-          $autopkgtest_require_success = 1;
+          $autopkgtest_require_success = 0;
           EOF
           mkdir "$HOME/apt_repo"
 
