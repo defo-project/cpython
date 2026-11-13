@@ -3,8 +3,8 @@ name: builder
 on:
   workflow_dispatch:
   push:
-  schedule:
-    - cron: '00 9 * * *'
+  # schedule:
+    # - cron: '00 9 * * *'
 
 jobs:
   build:
@@ -24,8 +24,8 @@ jobs:
       - name: Prepare build environment
         run: |
           # The tmpfs on /tmp became too small
-          sudo umount -l /tmp
-          sudo mkdir -m 777 -p /tmp
+          # sudo umount -l /tmp
+          # sudo mkdir -m 777 -p /tmp
 
           sudo DEBIAN_FRONTEND=noninteractive apt -U install -y --no-install-recommends sbuild mmdebstrap debian-archive-keyring ccache uidmap autopkgtest podman passt dbus-user-session
 
